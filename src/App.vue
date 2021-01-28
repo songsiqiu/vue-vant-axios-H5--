@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    </div> -->
+    <!-- <keep-alive>
+      <router-view v-if="$route.meta.keepAlive" />
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" /> -->
+    <router-view></router-view>
   </div>
 </template>
 
-<style>
+<style lang="less">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+  overflow: hidden;
+  line-height: 1;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100%;
+  overflow: hidden;
 }
-
-#nav {
-  padding: 30px;
+div {
+  display: block;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/deep/ .van-nav-bar__title  {
+  color: #fff;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+/deep/ .van-nav-bar .van-icon {
+  color: #fff;
+}
+/deep/ .van-nav-bar__content {
+  background-color: #7baeb1;
+  border: 0px;
 }
 </style>
